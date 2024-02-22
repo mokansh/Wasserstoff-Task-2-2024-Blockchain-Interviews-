@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Proxy Contract for Load Balancing and Function Delegation
 
 This project demonstrates a proxy contract feature that delegates the function call to different implementation based on the function selector of the transaction or calldata.
@@ -14,7 +13,3 @@ Try running some of the following tasks:
 npx hardhat test
 npx hardhat run scripts/deploy.js
 ```
-=======
-# Wasserstoff-Task-2-2024-Blockchain-Interviews-
-Wasserstoff: Task 2 (2024 Blockchain Interviews)
->>>>>>> 414e6ec94ea2b9faa980439926e1676c09da5be4
