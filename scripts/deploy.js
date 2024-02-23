@@ -14,20 +14,20 @@ async function main() {
   LOAD = await ethers.getContractFactory("LoadBalancer")
   load = await LOAD.deploy(deployer.address)
   await load.waitForDeployment()
-  // load = await LOAD.attach("0xFDc1948e37909B237ce75260C11935389eE0787C")
+  // load = await LOAD.attach("0x3933b5cB1c4d9a24917fF5A1d0dD0919679F8385")
   console.log("load address = ", load.target)
 
   TOKEN = await ethers.getContractFactory("SampleToken")
   token = await TOKEN.deploy("ABC", "ABC")
   await token.waitForDeployment()
-  // token = await TOKEN.attach("0xB650b18345C63ae55f81dCa1f33CeaE16867F454")
+  // token = await TOKEN.attach("0x3f3E95c5034a46aB32F45E6C413e7DE0D211dEFA")
   console.log("token address = ", token.target)
 
 
   TOKEN_TRANSFER = await ethers.getContractFactory("TokenTransfer")
   tokenFacet = await TOKEN_TRANSFER.deploy()
   await tokenFacet.waitForDeployment()
-  // tokenFacet = await TOKEN_TRANSFER.attach("0x4628DC0d6eFEb3e6440d551AA7eb4D0EA3Fdc3E4");
+  // tokenFacet = await TOKEN_TRANSFER.attach("0xBD59D1Be4D08Cf161eD80d248dd45cC803896d53");
   console.log("tokenFacet address = ", tokenFacet.target)
 
 
@@ -35,7 +35,7 @@ async function main() {
   VOTING = await ethers.getContractFactory("Voting")
   votingFacet = await VOTING.deploy()
   await votingFacet.waitForDeployment()
-  // votingFacet = await VOTING.attach("0x2b066331c45f4dcB3079781c664FdE342e182fE3");
+  // votingFacet = await VOTING.attach("0x27f2f1D8B5Dae19B7d4a0370684f90B96D8F4496");
   console.log("votingFacet address = ", votingFacet.target)
 
 
@@ -43,21 +43,21 @@ async function main() {
   STAKING = await ethers.getContractFactory("Stake")
   stakingFacet = await STAKING.deploy()
   await stakingFacet.waitForDeployment()
-  // stakingFacet = await STAKING.attach("0xAdED01b65AFD821B86cbe45C6C0Efcb178Ee1a04");
+  // stakingFacet = await STAKING.attach("0xbdD9F83d11586d67C0fB1dEC11036Cb03644696F");
   console.log("stakingFacet address = ", stakingFacet.target)
 
 
 
-  loadBalancerToken = await TOKEN_TRANSFER.attach("0xFDc1948e37909B237ce75260C11935389eE0787C")
-  loadBalancerVoting = await VOTING.attach("0xFDc1948e37909B237ce75260C11935389eE0787C")
-  loadBalancerStaking = await STAKING.attach("0xFDc1948e37909B237ce75260C11935389eE0787C")
+  // loadBalancerToken = await TOKEN_TRANSFER.attach("0x3933b5cB1c4d9a24917fF5A1d0dD0919679F8385")
+  // loadBalancerVoting = await VOTING.attach("0x3933b5cB1c4d9a24917fF5A1d0dD0919679F8385")
+  // loadBalancerStaking = await STAKING.attach("0x3933b5cB1c4d9a24917fF5A1d0dD0919679F8385")
 
      // -----------------------------------testnet addresses ---------------------
-          // load balancer address = 0xFDc1948e37909B237ce75260C11935389eE0787C
-          // token address = 0xB650b18345C63ae55f81dCa1f33CeaE16867F454
-          // tokenFacet address = 0x4628DC0d6eFEb3e6440d551AA7eb4D0EA3Fdc3E4
-          // votingFacet address = 0x2b066331c45f4dcB3079781c664FdE342e182fE3
-          // stakingFacet address = 0xAdED01b65AFD821B86cbe45C6C0Efcb178Ee1a04
+          // load balancer address = 0x3933b5cB1c4d9a24917fF5A1d0dD0919679F8385
+          // token address = 0x3f3E95c5034a46aB32F45E6C413e7DE0D211dEFA
+          // tokenFacet address = 0xBD59D1Be4D08Cf161eD80d248dd45cC803896d53
+          // votingFacet address = 0x27f2f1D8B5Dae19B7d4a0370684f90B96D8F4496
+          // stakingFacet address = 0xbdD9F83d11586d67C0fB1dEC11036Cb03644696F
 
      // ------------------------ Token Transfer Facet tx ---------------------------------
           // await token.transfer(load.target, 100000000000000000000n)
@@ -100,7 +100,8 @@ async function main() {
 
           // await token.transfer(loadBalancerStaking.target, 100000000000000000000n)
           // console.log("load balancer bal ======= ", await token.balanceOf(loadBalancerStaking.target))
-      
+          // sleep(5000)
+
       
           // await load.addFunction("0x485cc955", stakingFacet.target) // adding initialize function of staking
           // await load.addFunction("0x7b0472f0", stakingFacet.target) // adding stake function of staking
