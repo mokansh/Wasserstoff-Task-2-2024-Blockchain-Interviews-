@@ -30,7 +30,7 @@ User can stake ABC token for 30, 60 and 90 seconds(on mainnet it will be 30, 60 
 
 <h2>Voting Contract</h2>
 Users can propose items for voting. One vote is allowed per user to vote on any item. Contract contains getWinner() function to see which item has got maximum number of votes.
-<h3>Functions</h3>
+<h3>External Functions</h3>
 1. proposeItem(string memory _item) - user can propose item to vote upon. First proposed item has id of 1, second item has id of 2, and so on..
 <br>
 2. voteForItem(uint256 _itemId) - user can vote on the proposed item by their id number.
