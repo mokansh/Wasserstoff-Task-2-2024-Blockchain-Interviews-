@@ -40,6 +40,22 @@ contract LoadBalancer {
       LoadBalancerStorage.updateFunction(_oldSelector, _newSelector, _address);
     }
 
+    /**
+     * @dev transfer ownership from oldOwner to _newOwner
+     * @param _newOwner function selector to update
+     */
+    function transferOwnership(address _newOwner) external {
+      LoadBalancerStorage.enforceIsContractOwner();
+      LoadBalancerStorage.setContractOwner(_newOwner);
+    }
+
+    /**
+     * @dev return the owner of the contract
+     */
+    function owner() external view returns(address) {
+      return LoadBalancerStorage.contractOwner();
+    }
+
     receive() external payable {}
 
     fallback() external payable {

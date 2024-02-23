@@ -9,7 +9,7 @@ error NotContractOwner(address _user, address _contractOwner);
 
 library LoadBalancerStorage {
     bytes32 constant BALANCER_STORAGE_POSITION =
-        keccak256("diamond.storage.proxy");
+        keccak256("load.balancer.storage.proxy");
 
     struct Storage {
         mapping(bytes4 => address) selectorToFacet;
